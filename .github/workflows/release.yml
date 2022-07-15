@@ -18,7 +18,8 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with: 
-          files: v2ray_exporter-macos.tar.gz
-          checksum
+          files: |
+            v2ray_exporter-macos.tar.gz
+            checksum
         env:
           GITHUB_TOKEN: ${{ secrets.ENV_TOKEN }}
