@@ -13,10 +13,12 @@ jobs:
           go-version: "1.18" 
 
       - run: go build .
-      - run: tar -zcvf v2ray-exporter-macos.tar.gz v2ray-exporter
+      - run: tar -zcvf v2ray_exporter-macos.tar.gz v2ray_exporter
+      - run: sha256sum v2ray_exporter-macos.tar.gz >> checksum
       - name: Release
         uses: softprops/action-gh-release@v1
         with: 
-          files: v2ray-exporter-macos.tar.gz
+          files: v2ray_exporter-macos.tar.gz
+          checksum
         env:
           GITHUB_TOKEN: ${{ secrets.ENV_TOKEN }}

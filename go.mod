@@ -1,4 +1,4 @@
-module v2ray-exporter
+module v2ray_exporter
 
 go 1.18
 
