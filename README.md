@@ -20,6 +20,8 @@ brew services start v2ray_exporter
 
 By default, the `v2ray_exporter` listens on port `9110` and fetches V2Ray data via port `10500`.
 
+Run `/usr/local/opt/v2ray_exporter/bin/v2ray_exporter_brew_services` for temporary use.
+
 ## Tutorial
 
 ```bash
@@ -59,6 +61,7 @@ Edit `/usr/local/etc/prometheus.args`
 
 ```bash
 openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -keyout server.key -out server.crt -subj "/C=US/CN=localhost"
+chmod 400 server.key server.crt
 htpasswd -nBC 12 '' | tr -d ':\n'
 ```
 
@@ -205,3 +208,4 @@ For users who do not really care about the internal changes, but only need a map
 - <https://github.com/prometheus/exporter-toolkit/tree/master/web>
 - <https://github.com/LeiShi1313/node_exporter/blob/master/collector/v2ray.go>
 - <https://github.com/Homebrew/homebrew-core/blob/master/Formula/node_exporter.rb>
+- <https://inuits.eu/blog/prometheus-tls>
