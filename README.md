@@ -18,7 +18,7 @@ brew install v2ray_exporter
 brew services start v2ray_exporter
 ```
 
-By default, the `v2ray_exporter` listens on port `9110` and fetches V2Ray data via port `10500`.
+By default, the `v2ray_exporter` listens on port `9110` and fetches V2Ray data via port `10085`.
 
 Run `/usr/local/opt/v2ray_exporter/bin/v2ray_exporter_brew_services` for temporary use.
 
@@ -34,7 +34,7 @@ brew install grafana prometheus node_exporter v2ray v2ray_exporter
 Edit `/usr/local/etc/v2ray_exporter.args`
 
 ```bash
---v2ray.endpoint=127.0.0.1:10500
+--v2ray.endpoint=127.0.0.1:10085
 --web.listen-address=localhost:9110
 --web.config=/usr/local/etc/tls.yaml
 ```
